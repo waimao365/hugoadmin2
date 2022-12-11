@@ -5,16 +5,43 @@ backend:
   base_url: https://hexo-waimao365.vercel.app
   
 
-media_folder: "images/uploads" # 博客上传图片所在的目录
+media_folder: "static/img" # 存放多媒體的資料夾
+public_folder: "/img"
+locale: "zh_Hant" # 語系 https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-locales/src
 
-collections:
-  - name: "blog" # 用于路径
-    label: "Blog" # 用于 UI
-    folder: "content/post" # 博客文章所在的路径
-    create: true # 允许创建新文件（必须打开 否则不能新建新文章）
-    slug: "---" # 档案名称
-    fields: # 修改器可修改的头数据
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Tags", name: "tags", widget: "list"}
-      - {label: "Body", name: "body", widget: "markdown"}
+collections: # https://www.netlifycms.org/docs/configuration-options/#collections
+  - name: 'posts'
+    label: '文章'
+    folder: 'content/posts'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - {label: "顶部图", name: "banner_img", widget: "image", required: false} 
+      - {label: "文章封面", name: "index_img", widget: "image", required: false} 
+      - {label: "文章排序", name: "sticky", widget: "number", required: false, hint: "数值越大，该文章越靠前"}
+      - {label: "标题", name: "title", widget: "string" }
+      - {label: "发布日期", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
+      - {label: "更新日期", name: "updated", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
+      - {label: "标签", name: "tags", widget: "list", required: false}
+      - {label: "分类", name: "categories", widget: "list", required: false}
+      - {label: "关键词", name: "keywords", widget: "list", required: false}
+      - {label: "摘要", name: "excerpt", widget: "string", required: false}
+      - {label: "永久链接", name: "permalink", widget: "string", required: false}
+      - {label: "评论", name: "comments", widget: "boolean", default: true, required: false}
+      - {label: "内容", name: "body", widget: "markdown", required: false}
+  - name: "categories"
+    label: "分类"
+    folder: "content/categories"
+    create: true
+    fields:
+      - {label: "标题", name: "title", widget: "string"}
+      - {label: "内容", name: "body", widget: "markdown", required: false}
+  - name: "tags"
+    label: "标签"
+    folder: "content/tags"
+    create: true
+    fields:
+      - {label: "标题", name: "title", widget: "string"}
+      - {label: "内容", name: "body", widget: "markdown", required: false}
