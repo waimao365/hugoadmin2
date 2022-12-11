@@ -10,7 +10,7 @@ media_folder: "images/uploads" # 博客上传图片所在的目录
 collections:
   - name: "blog" # 用于路径
     label: "Blog" # 用于 UI
-    folder: "_post/" # 博客文章所在的路径
+    folder: "content/post" # 博客文章所在的路径
     create: true # 允许创建新文件（必须打开 否则不能新建新文章）
     slug: "---" # 档案名称
     fields: # 修改器可修改的头数据
