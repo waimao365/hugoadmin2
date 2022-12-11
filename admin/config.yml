@@ -12,7 +12,7 @@ locale: "zh_Hant" # 語系 https://github.com/netlify/netlify-cms/tree/master/pa
 collections: # https://www.netlifycms.org/docs/configuration-options/#collections
   - name: 'posts'
     label: '文章'
-    folder: 'content/posts'
+    folder: 'content/post'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     editor:
