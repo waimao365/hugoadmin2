@@ -1,9 +1,9 @@
 
 backend:
   name: main
-  repo: "waimao365/hugoadmin1" # blog 存放在 Github repo 的位置
-  branch: "main" # 分支
-  site_url: "https://hugoadmin2.vercel.app" # 你的網站網址
+  repo: waimao365/hugoadmin1 # blog 存放在 Github repo 的位置
+  branch: main # 分支
+  site_url: https://hugoadmin2.vercel.app # 你的網站網址
 
 media_folder: static/img
 public_folder: /img
