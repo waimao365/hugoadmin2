@@ -5,19 +5,16 @@ backend:
   base_url: https://hexo-waimao365.vercel.app
   
 
-media_folder: "static/img" # 存放多媒體的資料夾
-public_folder: "/img"
-locale: "zh_Hant" # 語系 https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-locales/src
+# This line should *not* be indented
+publish_mode: editorial_workflow
 
-collections: # https://www.netlifycms.org/docs/configuration-options/#collections
-  - name: 'posts'
-    label: '文章'
-    folder: 'content/post'
-    create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
-    editor:
-      preview: false
-    fields:
+collections:
+  - name: 'Post' # Used in routes, e.g., /admin/collections/blog
+    label: 'Post' # Used in the UI
+    folder: 'content\post' # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md    
+    fields: # The fields for each document, usually in front matter
       - {label: "顶部图", name: "banner_img", widget: "image", required: false} 
       - {label: "文章封面", name: "index_img", widget: "image", required: false} 
       - {label: "文章排序", name: "sticky", widget: "number", required: false, hint: "数值越大，该文章越靠前"}
@@ -30,18 +27,4 @@ collections: # https://www.netlifycms.org/docs/configuration-options/#collection
       - {label: "摘要", name: "excerpt", widget: "string", required: false}
       - {label: "永久链接", name: "permalink", widget: "string", required: false}
       - {label: "评论", name: "comments", widget: "boolean", default: true, required: false}
-      - {label: "内容", name: "body", widget: "markdown", required: false}
-  - name: "categories"
-    label: "分类"
-    folder: "content/categories"
-    create: true
-    fields:
-      - {label: "标题", name: "title", widget: "string"}
-      - {label: "内容", name: "body", widget: "markdown", required: false}
-  - name: "tags"
-    label: "标签"
-    folder: "content/tags"
-    create: true
-    fields:
-      - {label: "标题", name: "title", widget: "string"}
       - {label: "内容", name: "body", widget: "markdown", required: false}
