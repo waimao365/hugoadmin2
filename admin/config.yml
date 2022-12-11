@@ -1,7 +1,10 @@
 
-backend:
-  name: main
-  branch: main # Branch to update (optional; defaults to master)
+name: github
+  repo: hugoadmin2.vercel.app/ # Path to your Github/Gitlab repository
+  branch: main # Branch to update
+  base_url: https://hugoadmin2.vercel.app/
+
+
 media_folder: static/img
 public_folder: /img
 collections:
