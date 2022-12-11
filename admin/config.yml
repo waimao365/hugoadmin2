@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: waimao365/admin1 # Path to your Github/Gitlab repository
+  repo: waimao365/hugoadmin1 # Path to your Github/Gitlab repository
   branch: main # Branch to update
   base_url: https://hexo-waimao365.vercel.app
 # These lines should *not* be indented
