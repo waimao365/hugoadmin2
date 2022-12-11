@@ -29,8 +29,7 @@ collections:
       summary: '{{title}}' # optional summary for a tree node, defaults to the inferred title field
     # adding a meta object with a path property allows editing the path of entries
     # moving an existing entry will move the entire sub tree of the entry to the new location
-    meta: { path: { widget: string, label: 'Path', index_file: 'index', hint: 'markdown文件路径, 对于page bundle, 如 "一级目录/二级目录/page-bundle目录/index.md", 只需要填写 "一级目录/二级目录/page-bundle目录",不
-要忘记填写page-bundle目录' } }
+    
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
