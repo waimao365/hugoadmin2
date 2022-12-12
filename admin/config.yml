@@ -41,10 +41,12 @@ collections:
       - {label: "文章在首页的封面图", name: "index_img", widget: "image", required: false} 
       - {label: "发布日期", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
       - {label: "更新日期", name: "updated", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
-      - {label: "Slug", name: "Slug", widget: "string", required: false}
+      - {label: "固定链接", name: "Slug", widget: "string", required: false}
       - {label: "标签", name: "tags", widget: "list", required: false}
       - {label: "分类", name: "categories", widget: "list", required: false}
       - {label: "在首页中隐藏此文章", name: "hide", widget: "boolean", default: false, required: false}
       - {label: "内容", name: "body", widget: "markdown", required: false}
+      # - {label: "评论区", name: "comments", widget: "boolean", default: true, required: false}
+      # - {label: "关键词", name: "keywords", widget: "list", required: false}
       
   
