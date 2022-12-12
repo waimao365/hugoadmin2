@@ -32,19 +32,23 @@ collections:
     
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields for each document, usually in front matter
-      
-      - {label: "顶部图", name: "banner_img", widget: "image", required: false} 
-      - {label: "文章封面", name: "index_img", widget: "image", required: false} 
+    fields: # 每份文件的字段，通常是前面的内容。
+      - {label: "标题", name: "title", widget: "string"}
+      - {label: "作者", name: "author", widget: "string", required: false} 
       - {label: "文章排序", name: "sticky", widget: "number", required: false, hint: "数值越大，该文章越靠前"}
-      - {label: "标题", name: "title", widget: "string" }
+      - {label: "摘要", name: "excerpt", widget: "list", required: false}
+      - {label: "文章页顶部大图", name: "banner_img", widget: "image", required: false} 
+      - {label: "文章在首页的封面图", name: "index_img", widget: "image", required: false} 
       - {label: "发布日期", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
       - {label: "更新日期", name: "updated", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", dateFormat: "YYYY-MM-DD", timeFormat: "HH:mm:ss", required: false}
+      - {label: "永久链接", name: "Slug", widget: "string", required: false}
       - {label: "标签", name: "tags", widget: "list", required: false}
       - {label: "分类", name: "categories", widget: "list", required: false}
-      - {label: "关键词", name: "keywords", widget: "list", required: false}
-      - {label: "摘要", name: "excerpt", widget: "string", required: false}
-      - {label: "Slug", name: "slug", widget: "string", required: false, hint: "Slug可以是目录,如 linux/archlinux, 此项会作为路径的功能可能会被 path meta 覆盖"}
-      - {label: "评论", name: "comments", widget: "boolean", default: true, required: false}
+      - {label: "文章排序权重", name: "sticky", widget: "number", required: false}
+      - {label: "在首页中隐藏此文章", name: "hide", widget: "boolean", default: false, required: false}
+      #  comment: 'This is a multiline\ncomment'
+      # - {label: "评论区", name: "comments", widget: "boolean", default: true, required: false}
+      # - {label: "关键词", name: "keywords", widget: "list", required: false}
       - {label: "内容", name: "body", widget: "markdown", required: false}
+    
       
